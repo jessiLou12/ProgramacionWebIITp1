@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensajes</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e9ecef;
+            color: #495057;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #ffffff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            padding: 25px;
+            border-radius: 12px;
+            width: 100%;
+            max-width: 650px;
+        }
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #0056b3;
+            text-align: center;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background-color: #f8f9fa;
+            border: 1px solid #ced4da;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            padding: 20px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        li:hover {
+            background-color: #e2e6ea;
+            transform: translateY(-3px);
+        }
+        .mensaje-info {
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #343a40;
+        }
+        .mensaje-texto {
+            font-size: 15px;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Mensajes</h1>
+        <ul>
+            {% for mensaje in mensajes %}
+                <li>
+                    <div class="mensaje-info">{{ mensaje.remitente }} a {{ mensaje.destinatario }}</div>
+                    <div class="mensaje-texto">{{ mensaje.texto }}</div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
