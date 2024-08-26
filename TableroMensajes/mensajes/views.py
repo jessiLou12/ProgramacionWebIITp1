@@ -7,4 +7,4 @@ from .models import Mensajes
 def mensajes (request):
     recibidos = Mensajes.objects.all
 
-    return render(request,'mensajes,mensajes.html', {'mensjaes':recibidos}) 
+    return render(request,'mensajes/vista.html', {'mensjaes':recibidos}) 
