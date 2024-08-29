@@ -1,10 +1,10 @@
 from django.shortcuts import render
-from .models import Mensajes
+from .models import Mensaje
 
 # Create your views here.
 # IMPLEMENTACION DE LA VISTA punto3
 
-def mensaje (request):
-    recibidos = Mensajes.objects.all
+def mensajes (request):
+    recibidos = Mensaje.objects.all
 
-    return render(request,'mensaje/Mensajes.html', {'mensaje':recibidos}) 
+    return render(request,'mensajes/Mensajes.html', {'mensajes':recibidos}) 
